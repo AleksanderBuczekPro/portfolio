@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis - Admin - {% endblock %}
+
+{% block body %}
+
+    <div class="container admin-container">
+
+        <div class="row">
+            <div class="col">
+                
+                <h2 class="mb">Avis ({{ notices|length }})</h2>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th class="col-2">De</th>
+                        <th colspan="2">Entreprise</th>
+                        <th class="col-6">Avis</th>
+                        <th></th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        {% if notices|length > 0 %}
+                            {% for notice in notices %}
+                                <tr>
+                                    <td>{{ notice.createdAt|date("d/m/Y h:m") }}</td>
+                                    <th>{{ notice.firstName }} {{ notice.lastName }}</th>
+                                    <td>
+                                        {% if notice.logo %}
+                                        <a href="{{ asset('assets/uploads/' ~ notice.logo) }}" target="_blank">
+                                            <img src="{{ asset('assets/uploads/' ~ notice.logo) }}" class="project-visual small" alt="Image">
+                                        </a>
+                                        {% else %}
+                                            Aucun logo
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ notice.company }}</td>
+                                    <td>{{ notice.content }}</td>
+                                    <td>
+                                        <a href="{{ path('admin_edit_notice', {'id': notice.id }) }}" class="btn btn-light btn-small">Modifier</a>
+
+                                        {% if notice.approuved %}
+                                            <a href="{{ path('admin_approuve_notice', {'id': notice.id }) }}" class="btn btn-light btn-small">Désapprouver</a>
+                                        {% else %}
+                                            <a href="{{ path('admin_approuve_notice', {'id': notice.id }) }}" class="btn btn-primary btn-small">Approuver</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            </tr>
+                                <td colspan="6" class="text-center"> Aucun avis </td>
+                            </tr>
+                        {% endif %}
+                    
+                    
+                    </tbody>
+                </table>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

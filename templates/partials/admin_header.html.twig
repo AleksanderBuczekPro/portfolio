@@ -1,0 +1,26 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light navbar-center admin-navbar {% if app.request.attributes.get('_route') == 'home' %}home-navbar{% endif %}">
+    <div class="container py-4">
+      <a class="navbar-brand" href="#">Admin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+          <div class="navbar-nav mx-auto">
+              <a class="nav-link mx-4 {% if app.request.attributes.get('_route') == 'admin' or app.request.attributes.get('_route') == 'admin_projects' %}active{% endif %}" href="{{ path('admin_projects') }}">Projets</a>
+              <a class="nav-link mx-4 {% if app.request.attributes.get('_route') == 'admin_contacts' %}active{% endif %}" href="{{ path('admin_contacts') }}">Contacts</a>
+              <a class="nav-link mx-4 {% if app.request.attributes.get('_route') == 'admin_notices' %}active{% endif %}" href="{{ path('admin_notices') }}">Avis</a>
+          </div>
+  
+          
+          <div class="navbar-nav ml-auto">
+              <a class="nav-link" href="#">
+                <i class="fas fa-home"></i>
+              </a>
+              <a class="nav-link" href="#">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+          </div>
+      </div>
+    </div>
+  </nav>

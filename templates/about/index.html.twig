@@ -1,0 +1,208 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    À propos - 
+{% endblock %}
+
+{% block body %}
+
+<div class="container services-container webdesign-container">
+    <div class="row">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none">
+            <img class="my-profile" src="{{ asset('assets/images/my_profile.png') }}" alt="Image générique">
+        </div>
+
+        <div class="col-lg-6">
+            <p class="purple bold full-name mt-0"><span class="my-line">--------</span>A propos</p>
+            <h2 class="service-title">A propos</h2>
+            <p class="service-description">Je suis Aleksander Buczek, développeur web et graphiste. Passionné par l’innovation et l’image, j’ai à cœur de faire vivre l’identité visuelle des marques à travers tous les médias avec sens et émotion. </p>
+            <a href="{{ asset('assets/files/cv.pdf') }}" class="btn btn-my-light mt-4" target="_blank">Voir mon CV</a>
+        </div>
+
+        <div class="col-lg-6 d-none d-lg-block">
+            <img class="my-profile"  src="{{ asset('assets/images/my_profile.png') }}" alt="Image générique" data-aos="fade-left" data-aos-duration="2000">
+        </div>
+
+    </div>
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/books.svg') }}" alt="Image générique">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Profil</h3>
+            <p class="service-step-description">Diplômé de l'Institut Universitaire de Technologie de Dijon et avec plus de 5 ans d'expérience en tant que développeur web et graphiste, j’ai développé de solides compétences dans le webdesign, le développement web dans sa globalité ainsi que la conception de supports de communication.
+                Je travaille aussi bien avec des petites et qu'avec grandes entreprises issus de divers horizons.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none step-image-container">
+            <img src="{{ asset('assets/images/coffee.svg') }}" alt="Image générique">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Rigoureux et passionné</h3>
+            <p class="service-step-description">Je suis capable de mener un projet de A à Z, des premières étapes de création à la livraison de produits finis, faisant de moi votre unique interlocuteur. Accordant une grande importance à la création d’univers graphiques soignés et innovants, je suis animé par la recherche des solutions les plus pertinentes aux problématiques de mes clients.
+            </p>
+        </div>
+
+        <div class="col-lg-6 d-none d-lg-block step-image-container">
+            <img src="{{ asset('assets/images/coffee.svg') }}" alt="Image générique">
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/startup.svg') }}" alt="Image générique">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Compétences techniques</h3>
+                
+                <div class="competence">
+                    <div class="competence-circle graph illustrator">
+                        <img src="{{ asset('assets/images/illustrator_light.svg') }}" alt="Competence Icon"> 
+                    </div>
+                    <p>Illustrator</p>
+                </div>
+
+                <div class="competence">
+                    <div class="competence-circle graph photoshop">
+                        <img src="{{ asset('assets/images/photoshop_light.svg') }}" alt="Competence Icon">
+                    </div>
+                    <p>Photoshop</p>
+                </div>
+
+                <div class="competence">
+                    <div class="competence-circle graph indesign">
+                        <img src="{{ asset('assets/images/indesign_light.svg') }}" alt="Competence Icon">
+                    </div>
+                    <p>Indesign</p>
+                </div>
+
+                <div class="competence">
+                    <div class="competence-circle dev symfony">
+                        <img src="{{ asset('assets/images/symfony_light.svg') }}" alt="Competence Icon">   
+                    </div>
+                    <p>Symfony</p>
+                </div>
+
+                <div class="competence">
+                    <div class="competence-circle dev html">
+                        <img src="{{ asset('assets/images/htmlcss_light.svg') }}" alt="Competence Icon">
+                    </div>
+                    <p>HTML/CSS</p>
+                </div>
+
+                <div class="competence">
+                    <div class="competence-circle dev js">
+                        <img src="{{ asset('assets/images/javascriptjquery_light.svg') }}" alt="Competence Icon">
+                    </div>
+                    <p>JS/JQuery</p>
+                </div>
+
+                <div class="competence">
+                    <div class="competence-circle dev php">
+                        <img src="{{ asset('assets/images/myphp_light.svg') }}" alt="Competence Icon">
+                    </div>
+                    <p>PHP/MySQL</p>
+                </div>
+
+                <div class="competence">
+                    <div class="competence-circle dev bootstrap">
+                        <img src="{{ asset('assets/images/bootstrap_light.svg') }}" alt="Competence Icon">
+                    </div>
+                    <p>Bootstrap</p>
+                </div>
+      
+            
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="container-fluid bg-light">
+    <div class="container faq-container bg-light">
+        
+        <h2 class="text-center mb-2">Questions fréquentes</h2>
+
+        <div class="row">
+
+        <div class="col-10 mx-auto">
+        
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Peut-on profiter de vos prestations à distance ?
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Bien sûr ! Nous disposons de différents outils (Skype, Teamviewer, Slack..) pour communiquer et mener à bien votre projet. N'hésitez pas à me contacter même si vous êtes loin géographiquement. </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Quels sont vos délais de réalisation ?
+                </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Les délais de réalisations sont variables d'un projet à un autre. Je vous invite à me contacter pour discuter de votre projet, vous pourrez alors obtenir un délai plus précis en fonction de votre besoin.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Quels sont vos tarifs ?
+                </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Tout comme le délai, le tarif d'un projet peut être très variable et dépend de sa complexité. Il est établit en fonction du temps de travail estimé en heures.</div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+
+        </div>
+        
+    </div>
+</div>
+<div class="container-fluid contact-container bg-purple">
+
+    <div class="row">
+      <div class="col-lg-7">
+        <h2 class="text-white">Vous avez un projet et cherchez <br>un graphiste freelance ?</h2>
+        <a href="{{ path('contact') }}" class="btn btn-pink">Contactez-moi</a>
+
+      </div>
+      <div class="col-lg-5">
+        <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+
+      </div>
+
+    </div>
+
+    {# Let me know if you want to talk about a potential collaboration. I'm avaible for freelance work #}
+
+
+  </div>
+
+
+
+{% endblock %}

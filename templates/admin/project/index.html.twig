@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets - Admin - {% endblock %}
+
+{% block body %}
+
+    <div class="container admin-container">
+
+        <div class="row">
+            <div class="col">
+                
+                <h2 class="mb-0">Projets ({{ projects|length }})</h2>
+                <a href="{{ path('admin_add_project') }}" class="btn btn-primary float-end mb-4"><i class="fas fa-book"></i>Ajouter un projet</a>
+                
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="2"></th>
+                        <th scope="col" class="col-2">Nom du projet</th>
+                        <th scope="col">Slug</th>
+                        <th scope="col" class="col-3">Introduction</th>
+                        <th scope="col">Images</th>
+                        <th scope="col" class="col-4">Description</th>
+                        <th scope="col">Date</th>
+                        <th scope="col" class="col-2" colspan="2"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        {% if projects|length > 0 %}
+                            {% for project in projects %}
+                            <tr>
+                                <td>
+                                    <a href="{{ asset('assets/uploads/' ~ project.frontImage) }}" target="_blank">
+                                        <img src="{{ asset('assets/uploads/' ~ project.frontImage) }}" class="project-visual" alt="Image">
+                                    </a>
+                                </td>
+                                <td><div class="project-color m-auto" style="background-color: {{ project.color }};"></div></td>
+                                <td class="bold">
+                                    {{ project.name }} {% if project.front %} <i class="fas fa-star yellow"></i> {% endif %}</td>
+                                <td>{{ project.slug }}</td>
+                                <td>{{ project.introduction }}</td>
+                                <td>
+                                    {% if project.visuals|length > 0 %}
+
+                                        {% for visual in project.visuals %}
+                                            <a href="{{ asset('assets/uploads/' ~ visual.imageName) }}" target="_blank">
+                                                <img src="{{ asset('assets/uploads/' ~ visual.imageName) }}" class="project-visual" alt="Image">
+                                            </a>
+                                        {% endfor %}
+
+                                    {% else %}
+
+                                        Aucune image
+
+                                    {% endif %}
+                                    
+                                </td>
+                                <td>
+                                    <div class="mb-2 bold">{{ project.subtitle }}</div>
+                                    <div>{{ project.description }}</div>
+                                </td>
+                                <td>
+                                    <div class="bold">Date du projet</div>
+                                    <div class="mb-2">{{ project.date|date("d/m/Y")}}</div>
+
+                                    <hr>
+                                    {% if project.deletedAt is null %}
+
+                                        <div class="bold">Crée le</div>
+                                        <div class="mb-2">{{ project.createdAt|date("d/m/Y h:m") }}</div>
+
+                                        <div class="bold">Modifié le</div>
+                                        {% if project.updatedAt is not null %}
+                                        <div class="mb-2">{{ project.updatedAt|date("d/m/Y h:m") }}</div>
+                                        {% else %}
+                                        -
+                                        {% endif %}
+
+                                    {% else %}
+
+                                        <div class="bold">Supprimé le</div>
+                                        <div class="mb-2">{{ project.updatedAt|date("d/m/Y h:m") }}</div>
+
+                                    {% endif %}
+
+                                    
+
+                                    
+                                </td>
+                                <td class="text-center table-buttons">
+                                    <a href="{{ path('portfolio_show', {'slug': project.slug }) }}" target="_blank" class="btn btn-light btn-small mt-1"><i class="fas fa-eye"></i>Aperçu</a>
+                                    <a href="{{ path('admin_edit_project', {'id': project.id }) }}" class="btn btn-light btn-small mt-1"><i class="fas fa-pen"></i>Modifier</a>
+                                    <a href="{{ path('admin_delete_project', {'id': project.id }) }}" class="btn btn-danger btn-small"><i class="fas fa-trash-alt"></i>Supprimer</a>
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            </tr>
+                                <td colspan="9" class="text-center"> Aucun projet </td>
+                            </tr>
+                        {% endif %}
+                    
+                    
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

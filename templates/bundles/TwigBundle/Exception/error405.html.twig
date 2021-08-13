@@ -1,0 +1,18 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Non autorisé - 
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container error-container">
+
+    {# <img src="{{ asset('assets/images/error404.svg') }}" alt="Error Image"> #}
+
+    <h1>Oops ! Non autorisé.</h1>
+    <a class="btn btn-primary mt-4" href="{{ path('home') }}">Retour à l'Accueil</a>
+</div>
+{% endblock %}

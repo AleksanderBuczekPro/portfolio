@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio - {% endblock %}
+
+{% block body %}
+
+    <div class="container projects-container">
+        <div class="row">
+            {% for project in projects %}
+
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4" data-aos="fade-up" data-aos-duration="2000">
+
+                    <a href="{{ path('portfolio_show', { slug: project.slug }) }}">
+                        <div class="work-card" style="background-image: url({{ asset('assets/uploads/' ~ project.frontImage) }});">
+                            <div class="overlay-image" style="background-color: {{ project.color ~ 'EF'}}">
+                                <p class="work-title mx-auto">{{ project.name }}</p>
+                            </div>
+                            
+                        </div>
+                    </a>
+
+                </div>
+
+            {% endfor %}
+            
+
+
+        </div>
+
+    </div>
+
+    {# <div class="bg-light">
+        <div class="container portfolio-contact-container text-center">
+            <p class="">Alors, on travaille ensemble ?</p>
+            <a href="" class="">Contactez-moi</a>
+        </div>
+    </div> #}
+
+    <!-- CONTACT -->
+    <div class="container-fluid contact-container bg-light">
+
+        <div class="row">
+            <div class="col-lg-7">
+            <h2 class="text-dark">Alors, <br>cela vous plaît ?</h2>
+            <a href="{{ path('contact') }}" class="btn btn-primary">Travaillons ensemble</a>
+    
+            </div>
+            <div class="col-lg-5">
+            <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+    
+            </div>
+    
+        </div>
+    
+    </div>
+
+
+{% endblock %}

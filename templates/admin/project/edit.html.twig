@@ -1,0 +1,220 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un projet{% endblock %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+
+    
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-8 mx-auto">
+                <div class="card my-card">
+                    {{ form_start(form) }}
+                    
+                    <h4 class="card-title text-center">Modification d'un projet</h4>
+
+                         <!-- Front image -->
+                         <div class="row">   
+                            <div class="col-12">
+                                {{ form_label(form.frontImage) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_errors(form.frontImage) }}
+                                {{ form_widget(form.frontImage) }}
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div class="row">
+
+                            <div class="col-12">
+                                {{ form_label(form.name) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_widget(form.name) }}
+                            </div>
+                        </div>
+
+                        <!-- Introduction -->
+                        <div class="row">
+
+                            <div class="col-12">
+                                {{ form_label(form.introduction) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_widget(form.introduction) }}
+                            </div>
+                        </div>
+
+                        <!-- Subtitle -->
+                        <div class="row">   
+                            <div class="col-12">
+                                {{ form_label(form.subtitle) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_widget(form.subtitle) }}
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="row">   
+                            <div class="col-12">
+                                {{ form_label(form.description) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_widget(form.description) }}
+                            </div>
+                        </div>
+
+                        <!-- Couleur principale -->
+                        <div class="row">   
+                            
+                            <div class="col-12">
+                                {{ form_label(form.color) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_widget(form.color) }}
+                            </div>
+                        </div>
+
+                        <!-- Date -->
+                        <div class="row">   
+                            
+                            <div class="col-12">
+                                {{ form_label(form.date) }}
+                            </div>
+                            <div class="col-12">
+                                {{ form_widget(form.date) }}
+                            </div>
+                        </div>
+
+                         <!-- A la Une -->
+                         <div class="row">   
+                            <div class="col-12">
+                                {{ form_label(form.front) }}
+                            </div>
+                            <div class="col-2">
+                                {{ form_widget(form.front) }}
+                            </div>
+                        </div>
+
+                         <!-- Visuals -->
+                         <div class="row">   
+                            <div class="col-12">
+                                {{ form_label(form.visuals) }}
+                            </div>
+                            <div class="col-12">
+                                <div id="visual-fields-list"
+                                data-prototype="{{ form_widget(form.visuals.vars.prototype)|e }}"
+                                data-widget-tags="{{ '<div class="visuals"></div>'|e }}"
+                                data-widget-counter="{{ form.visuals|length }}">
+                                
+                                    {% for visual in form.visuals %}
+                                        <div>
+                                            {{ form_errors(visual) }}
+                                            {{ form_widget(visual) }}
+                                        </div>
+                                        <a class="btn btn-danger delete-visual" data-delete=""> Supprimer </a>
+                                    {% endfor %}
+
+                                </div>
+                                
+
+                                
+
+
+                            </div>
+                            <div class="col-12">
+                                <button type="button"
+                                class="add-another-collection-widget btn btn-light mt-4 float-end"
+                                data-list-selector="#visual-fields-list">Ajouter un visuel</button>
+
+                            </div>
+                                  
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="row">   
+                            <div class="col-12">
+                                <hr class="mt-4">
+                                <button type="submit" class="btn btn-primary float-end my-4">Modifier</button>
+                                <a href="{{ path('admin') }}" class="btn btn-secondary float-end mx-2 my-4">Retour</a>
+
+                            </div>
+                        </div>
+                </div>
+
+
+                        
+                    {{ form_end(form) }}
+                
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script>
+// add-visual-widget.js
+
+jQuery(document).ready(function () {
+
+    jQuery('.add-another-collection-widget').click(function (e) {
+
+        var list = jQuery(jQuery(this).attr('data-list-selector'));
+
+        // Try to find the counter of the list or use the length of the list
+        var counter = list.data('widget-counter') || list.children().length;
+
+        // grab the prototype template
+        var newWidget = list.attr('data-prototype');
+
+        // replace the "__name__" used in the id and name of the prototype
+        // with a number that's unique to your emails
+        // end name attribute looks like name="contact[emails][2]"
+        newWidget = newWidget.replace(/__name__/g, counter);
+        // Increase the counter
+        counter++;
+        // And store it, the length cannot be used if deleting widgets is allowed
+        list.data('widget-counter', counter);
+
+        // Delete Button
+        var button = '<a class="btn btn-danger delete-visual" data-delete="' + counter + '"> Supprimer </a>'
+
+        // create a new list element and add it to the list
+        var newElem = jQuery(list.attr('data-widget-tags')).html(newWidget+ button);
+        newElem.appendTo(list);
+
+
+        jQuery('.delete-visual').click(function (e) {
+
+            var id = $(this).data("delete")-1;
+            
+            $( "#project_visuals_" + id).next( "a").remove();
+            $( "#project_visuals_" + id).remove();
+            
+
+
+        });
+    });
+
+    
+    
+});
+
+
+</script>
+
+{% endblock %}

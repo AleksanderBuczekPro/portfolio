@@ -1,0 +1,197 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Graphisme - Services - 
+{% endblock %}
+
+{% block body %}
+
+<div class="container services-container webdesign-container">
+    <div class="row">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none">
+            <img src="{{ asset('assets/images/graphisme.svg') }}" alt="Graphisme Image">
+        </div>
+
+        <div class="col-lg-7">
+            <p class="pink bold full-name mt-0"><span class="my-line">--------</span>Graphisme</p>
+            <h2 class="service-title">Graphisme</h2>
+            <p class="service-description">J'interviens dans l'élaboration de votre identité visuelle dans un large panel de supports de communication.</p>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block">
+            <img src="{{ asset('assets/images/graphisme.svg') }}" alt="Graphisme Image" data-aos="fade-left" data-aos-duration="2000">
+        </div>
+
+    </div>
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/echanges.svg') }}" alt="Graphisme Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Échanges et analyse</h3>
+            <p class="service-step-description">
+                Pour commencer, nous allons établir un portrait de votre structure, en répondant à des questions simples : qui êtes vous, à qui vous adressez-vous, quelles valeurs sont propres à votre organisme, quel message souhaitez-vous véhiculer, quels sont vos concurrents, etc<br>
+                Nous allons également prendre en compte vos goûts en terme de couleurs, de style et d’ambiance.
+            
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none step-image-container">
+            <img src="{{ asset('assets/images/creative.svg') }}" alt="Graphisme Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Recherche et création</h3>
+            <p class="service-step-description">Une fois vos besoins identifiés, la phase de recherche et conception graphique peut commencer. Brainstorming, concepts novateurs, palette de couleurs, explorations typographiques … Il s’agit de trouver la réponse créative qui fera briller les promesses et les valeurs de votre marque.
+            </p>
+        </div>
+
+        <div class="col-lg-6 d-none d-lg-block step-image-container">
+            <img src="{{ asset('assets/images/creative.svg') }}" alt="Graphisme Image">
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/propositions.svg') }}" alt="Graphisme Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Propositions et ajustements</h3>
+            <p class="service-step-description">
+                Lorsque la recherche a aboutie, je vous soumettrai une ou plusieurs propositions selon le type de projet. Nous aurons un échange permettant de comprendre la réflexion effectuée en amont pour arriver à ce résultat.
+                Vous me donnerez vos impressions et je procéderai à des modifications et ajustements, jusqu’à validation du visuel.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none step-image-container">
+            <img src="{{ asset('assets/images/delivery.svg') }}" alt="Delivery Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Finalisation et livraison</h3>
+            <p class="service-step-description">Après avoir choisi et affiné ensemble l’une des pistes créatives proposées, tous les éléments graphiques finalisés vous seront fournis. Un guide d’utilisation de votre nouvelle identité visuelle sera à votre disposition afin d’assurer une harmonie de tous vos supports.
+            </p>
+        </div>
+
+        <div class="col-lg-6 d-none d-lg-block step-image-container">
+            <img src="{{ asset('assets/images/delivery.svg') }}" alt="Delivery Image">
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid bg-light">
+    <div class="container faq-container bg-light">
+        
+        <h2 class="text-center mb-2">Questions fréquentes</h2>
+
+        <div class="row">
+
+        <div class="col-10 mx-auto">
+        
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Peut-on profiter de vos prestations à distance ?
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Bien sûr ! Nous disposons de différents outils (Skype, Teamviewer, Slack..) pour communiquer et mener à bien votre projet. N'hésitez pas à me contacter même si vous êtes loin géographiquement. </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Quels sont vos délais de réalisation ?
+                </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Les délais de réalisations sont variables d'un projet à un autre. Je vous invite à me contacter pour discuter de votre projet, vous pourrez alors obtenir un délai plus précis en fonction de votre besoin.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Quels sont vos tarifs ?
+                </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Tout comme le délai, le tarif d'un projet peut être très variable et dépend de sa complexité. Il est établit en fonction du temps de travail estimé en heures.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    J'aurais également besoin d'un site Internet.
+                </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Pas de problème ! Mes compétences me permettent gérer un projet dans sa globalité, que cela soit de la réalisation des visuels, du développement web ou de sa mise en ligne. Pour en savoir plus sur le développement web, cliquez <a href="{{ path('services_developpementweb') }}">ici.</a></div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Gérez-vous également l'impression de supports physiques ?
+                </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Bien sûr. Je maîtrise toute la chaîne graphique, de la conception à l’impression. Je travaille en étroite collaboration avec un imprimeur et je peux intervenir dans la gestion de vos besoins en supports physiques.</div>
+                </div>
+            </div>
+
+
+            </div>
+
+        </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+    <div class="container-fluid contact-container bg-purple">
+
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="text-white">Vous souhaitez me parler<br>de votre projet ?</h2>
+            <a href="{{ path('contact') }}" class="btn btn-pink">Demande de devis gratuit</a>
+    
+          </div>
+          <div class="col-lg-5">
+            <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+    
+          </div>
+    
+        </div>
+    
+    </div>
+
+    {# Let me know if you want to talk about a potential collaboration. I'm avaible for freelance work #}
+
+
+
+
+{% endblock %}

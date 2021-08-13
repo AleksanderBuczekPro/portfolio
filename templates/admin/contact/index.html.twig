@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts - Admin - {% endblock %}
+
+{% block body %}
+
+    <div class="container admin-container">
+
+        <div class="row">
+            <div class="col">
+                
+                <h2 class="mb">Contacts ({{ contacts|length }})</h2>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col">
+                
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <td>Date</td>
+                        <th class="col-2">De</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                        <th class="col-2">Objet</th>
+                        <th class="col-6">Message</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                        {% if contacts|length > 0 %}
+                            {% for contact in contacts %}
+                                <tr>
+                                    <td>{{ contact.sendAt|date("d/m/Y h:m") }}</td>
+                                    <th>{{ contact.author }}</th>
+                                    <td>{{ contact.email }}</td>
+                                    <td>{{ contact.phone }}</td>
+                                    <th>{{ contact.subject }}</th>
+                                    <td>{{ contact.content }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            </tr>
+                                <td colspan="9" class="text-center"> Aucun message </td>
+                            </tr>
+                        {% endif %}
+                    
+                    
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,180 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Web Design - Services - 
+{% endblock %}
+
+{% block body %}
+
+<div class="container services-container webdesign-container">
+    <div class="row">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none">
+            <img src="{{ asset('assets/images/dev.svg') }}" alt="Web Design Image">
+        </div>
+
+        <div class="col-lg-7">
+            <p class="yellow bold full-name mt-0"><span class="my-line">--------</span>Web Design</p>
+            <h2 class="service-title">Web Design</h2>
+            <p class="service-description">Je vous accompagne dans le design de votre site Internet, dans le respect de votre identité visuelle et adapté à chaque support numérique grâce à une méthodologie précise qui a fait ses preuves.</p>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block">
+            <img src="{{ asset('assets/images/dev.svg') }}" alt="Web Design Image"  data-aos="fade-left" data-aos-duration="2000">
+        </div>
+
+    </div>
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/books.svg') }}" alt="Books Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Définir les attentes</h3>
+            <p class="service-step-description">Nous allons commencer par établir un cahier des charges pour répondre au mieux à vos attentes. Quel est le type de site Internet souhaité ? Les objectifs ? La cible ? Votre budget ? C'est à ce moment que nous allons également définir un planning de livraison.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none step-image-container">
+            <img src="{{ asset('assets/images/search.svg') }}" alt="Search Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Phase de recherche</h3>
+            <p class="service-step-description">Une fois vos besoins identifiés, c'est le moment de compiler les sources d'inspiration design en listant ce qui vous plaît (et vous déplaît), sur d'autres sites que vous avez déjà consulté. Ce travail peut être aussi bien effectué par le client que par le webdesigner.
+            </p>
+        </div>
+
+        <div class="col-lg-6 d-none d-lg-block step-image-container">
+            <img src="{{ asset('assets/images/search.svg') }}" alt="Search Image">
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/delivery.svg') }}" alt="Delivery Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Finalisation</h3>
+            <p class="service-step-description">Une fois tous les éléments rassemblés, je vous fournis l'ensemble des éléments graphiques. Un guide d'utilisation nécessaire vous sera également transmis pour que vous puissiez assurer une harmonie dans tous vos supports.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+{# {% include '_questions.html.twig' %} #}
+
+<div class="container-fluid bg-light">
+    <div class="container faq-container bg-light">
+        
+        <h2 class="text-center mb-2">Questions fréquentes</h2>
+
+        <div class="row">
+
+        <div class="col-10 mx-auto">
+        
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Peut-on profiter de vos prestations à distance ?
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Bien sûr ! Nous disposons de différents outils (Skype, Teamviewer, Slack..) pour communiquer et mener à bien votre projet. N'hésitez pas à me contacter même si vous êtes loin géographiquement. </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Quels sont vos délais de réalisation ?
+                </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Les délais de réalisations sont variables d'un projet à un autre. Je vous invite à me contacter pour discuter de votre projet, vous pourrez alors obtenir un délai plus précis en fonction de votre besoin.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Quels sont vos tarifs ?
+                </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Tout comme le délai, le tarif d'un projet peut être très variable et dépend de sa complexité. Il est établit en fonction du temps de travail estimé en heures.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    J'aurais également besoin d'un développeur pour coder le site Internet.
+                </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Pas de problème ! Mes compétences me permettent gérer un projet dans sa globalité, que cela soit de la réalisation des maquettes, du développement ou de la mise en ligne. Pour en savoir plus sur le développement web, cliquez <a href="{{ path('services_developpementweb') }}">ici.</a></div>
+                </div>
+            </div>
+
+
+            </div>
+
+        </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+{# <div class="container-fluid contact-container bg-purple">
+
+    <div class="row">
+      <div class="col-7">
+        <h2 class="text-white">
+            Vous souhaitez me confier la<br>création de votre projet digital ?</h2>
+        <a href="" class="btn btn-pink">Discutons en</a>
+
+      </div>
+      <div class="col-5">
+        <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+
+      </div>
+
+    </div>
+
+
+  </div> #}
+
+  <div class="container-fluid contact-container bg-purple">
+
+    <div class="row">
+      <div class="col-lg-7">
+        <h2 class="text-white">Vous souhaitez me confier la<br>création de votre projet digital ?</h2>
+        <a href="{{ path('contact') }}" class="btn btn-pink">Discutons en</a>
+
+      </div>
+      <div class="col-lg-5">
+        <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+{% endblock %}

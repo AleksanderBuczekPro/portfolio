@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+
+    <input id="theme" type="hidden" value="{{ project.color }}">
+    <div class="container-fluid header-portfolio-container" style="background-color: {{ project.color }}">
+        <div class="row">
+            <div class="col-12">
+                <div class="header">
+                    <h1 class="project-title text-center">{{ project.name }}</h1>
+                    <p class="project-introduction text-center">{{ project.introduction }}</p>
+                    <div class="project-navigation text-center mt-4">
+                        <a class="btn-circle" href=""><i class="fas fa-chevron-left left text-white-50"></i>
+                        </a>
+                        <a class="btn-circle" href=""><i class="fas fa-chevron-right right text-white-50"></i></a>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid portfolio-container">
+        
+        <div class="row">
+            <div class="col">
+                <div class="front-image-container" style="background-image: url({{ asset('assets/uploads/' ~ project.frontImage) }});"></div>
+                {# <img class="front-image" src="{{ asset('assets/uploads/' ~ project.frontImage) }}" class="project-visual" alt="Image"> #}
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col info-container text-center">
+                
+                <h2 class="project-subtitle mb-4">{{ project.subtitle }}</h2>
+
+                <p class="project-description">{{ project.description }}</p>
+
+                {# <p class="project-date">{{ project.date|date("d/m/Y") }}</p> #}
+
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col">
+
+                {% for visual in project.visuals %}
+
+                <img src="{{ asset('assets/uploads/' ~ visual.imageName) }}" class="project-visual m-0" alt="Image">
+        
+
+                {% endfor %}
+                
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script>
+// add-visual-widget.js
+
+jQuery(document).ready(function () {
+
+    var color = $('#theme').val();
+    $("nav").css("background-color", color);
+    $("nav a.nav-link").css("color", "white");
+
+    // Scroll
+    // $("nav.navbar.scrolled").css("background-color", "white!important");
+    // $("nav.scrolled a.nav-link").css("color", "black");
+
+    $(document).scroll(function () {
+        var $nav = $("nav.navbar");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+
+        var $logolight = $(".logo-light");
+            $logolight.toggleClass('d-none', $(this).scrollTop() > 15);
+
+            var $logo = $(".logo");
+            $logo.toggleClass('d-block', $(this).scrollTop() > 20);
+    });
+
+    
+});
+
+</script>
+
+{% endblock %}

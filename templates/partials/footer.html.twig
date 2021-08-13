@@ -1,0 +1,66 @@
+
+
+<!-- FOOTER -->
+<footer class="bg-marine">
+    <div class="container footer-container">
+
+        
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <p class="text-white footer-title">Liens rapides</p>
+                <p class="text-white"><a href="{{ path('home') }}">Accueil</a></p>
+                <p class="text-white"><a href="{{ path('portfolio_index') }}">Portfolio</a></p>
+                <p class="text-white"><a href="{{ path('services_webdesign') }}">Service - Web Design</a></p>
+                <p class="text-white"><a href="{{ path('services_developpementweb') }}">Service - Développement Web</a></p>
+                <p class="text-white"><a href="{{ path('services_graphisme') }}">Service - Graphisme</a></p>
+                <p class="text-white"><a href="{{ path('about') }}">A propos</a></p>
+                <p class="text-white"><a href="{{ path('contact') }}">Contact</a></p>
+            </div>
+            <div class="col-sm-6  col-md-6 col-lg-3">
+                <p class="text-white footer-title">Me suivre</p>
+                <p class="text-white"><a href="https://github.com/AleksanderBuczekPro" target="_blank">LinkedIn</a></p>
+                <p class="text-white"><a href="https://www.linkedin.com/in/aleksander-buczek-505a9912a/?originalSubdomain=fr">Github</a></p>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <p class="text-white footer-title">Contact</p>
+                <p class="text-white"><a href="mailto:aleksander.buczek.pro@gmail.com">aleksander.buczek.pro@gmail.com</a></p>
+                <p class="text-white"><a href="tel:+33667033707">06 67 03 37 07</a></p>
+                <p class="text-white">Siège social : BEAUNE (21)</p>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <img class="logo-footer" src="{{ asset('assets/images/logo_light.svg') }}" alt="Logo Home">
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <p class="mb-0 text-white py-2 signature">Portfolio de Aleksander Buczek, graphiste à Beaune - 2021</p>
+    </div>
+
+</footer>
+
+{% block javascripts %}
+    <script>
+        $(function() {
+            AOS.init({
+                disable: 'mobile'
+            });  
+        });
+        
+        // Gestion de la navbar Mobile (couleur)
+        $( ".navbar-toggler" ).on( "click", function() {
+
+
+            if(!$('#my-nav').hasClass('toggled')){
+
+                $('#my-nav').addClass('toggled');
+
+            }else{
+
+                $('#my-nav').removeClass('toggled');
+            }
+        });
+       
+    </script>
+
+{% endblock %}

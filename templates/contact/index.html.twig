@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Contact - 
+{% endblock %}
+
+{% block body %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+
+<div class="container contacts-container webdesign-container">
+    <div class="row">
+
+        <div class="col-md-7">
+
+          {% for message in app.flashes('success') %}
+            {% include '_notification.html.twig' with {'main': message, 'secondary': "Votre demande va être traitée dans les plus brefs délais" } %}
+          {% endfor %}
+
+            <p class="purple bold full-name mt-0"><span class="my-line">--------</span>Contact</p>
+            <h2 class="contact-title">Travaillons<br>ensemble.</h2>
+            <p class="contact-description">Besoin d'un développeur web ou d'un graphiste ? Contactez-moi par mail, par téléphone, ou via le formulaire de contact.</p>
+            
+            <div class="coordonnees d-none d-md-block">
+            
+                <table class="table table-borderless">
+                    <tbody>
+                      <tr>
+                        <th class="icon"><i class="uil uil-envelope-alt"></i></th>
+                        <td class="content">aleksander.buczek.pro@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <th class="icon"><i class="uil uil-phone"></i></th>
+                        <td class="content">06 67 03 37 07</td>
+                      </tr>
+                      <tr>
+                        <th class="icon"><i class="uil uil-location-point"></i></th>
+                        <td class="content">Beaune</td>
+                      </tr>
+                    </tbody>
+                  </table>
+    
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            {# <img src="{{ asset('assets/images/chat.svg') }}" alt="Contact Image"> #}
+
+              {{ form_start(form) }}
+              {{ form_end(form) }}
+              
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid contact-container bg-purple">
+
+  <div class="row">
+    <div class="col-lg-7">
+      <h2 class="text-white">Vous avez un projet et cherchez <br>un graphiste freelance ?</h2>
+      <a href="{{ path('contact') }}" class="btn btn-pink">Contactez-moi</a>
+
+    </div>
+    <div class="col-lg-5">
+      <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+

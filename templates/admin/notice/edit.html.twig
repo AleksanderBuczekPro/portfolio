@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un projet{% endblock %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+
+    
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-8 mx-auto">
+                {{ form_start(form) }}
+                {{ form_end(form) }}
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

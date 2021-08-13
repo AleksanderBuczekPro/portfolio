@@ -1,0 +1,444 @@
+
+
+    }
+
+@media screen and (max-width: 1399px) {
+
+    .service-container {
+        padding: 0px 100px 30px;
+    }
+
+}
+
+
+@media screen and (min-width: 1199px) {
+
+.work-container a.left{
+
+    display: inline-block!important;
+    
+}
+
+}
+
+@media screen and (max-width: 1199px) {
+
+    .home-container {
+        height: 750px;
+
+    }
+
+    .home-container img {
+        top: 60px;
+    }
+    
+    .contact-container {
+        padding: 100px 60px 100px 120px;
+    }
+
+    .contact-container img {
+        position: absolute;
+        /* top: 75px; */
+        top: 193px;
+        right: 0;
+        height: 461px;
+    }
+
+    footer .footer-container {
+        padding: 100px;
+    }
+
+    .header-portfolio-container p.project-introduction {
+        padding: 6px 100px;
+
+    }
+
+    .portfolio-container .info-container {
+        padding: 100px 300px;
+    }
+
+    .services-container {
+        padding: 25px;
+    }
+
+}
+
+/* Header */
+@media screen and (min-width: 992px) {
+
+    div.responsive{
+
+        display: none;
+
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+
+    /* Header */
+    html,body
+    {
+        overflow-x: hidden;
+    }
+
+
+
+
+    button.navbar-toggler{
+
+        border: none;
+
+    }
+
+    button.navbar-toggler i{
+
+        color: var(--purple-color);
+        padding: 5px;
+
+    }
+
+    nav.navbar {
+        background-color: white;
+    }
+
+    nav.navbar.toggled {
+        background-color: #1F1D38;
+        transition: 0.5s ease-in-out ;
+    }
+
+    nav.navbar .navbar-collapse{
+
+        height: 100vh!important;
+        position: relative;
+
+
+    }
+    
+    nav.navbar img.logo{
+
+        display: block!important;
+    }
+
+    nav.navbar img.logo.portfolio{
+
+        display: none!important;
+    }
+
+
+
+    nav.navbar img.logo-light,
+    nav.navbar img.logo-home{
+
+        display: none;
+    }
+
+
+    nav.navbar .navbar-collapse .navbar-nav{
+
+        margin: auto;
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-35%);
+        transform: translateY(-35%);
+
+        width: 100%;
+
+    }
+
+    nav.navbar .navbar-collapse .navbar-nav .nav-link{
+
+        font-size: 20px;
+        color: white!important;
+    
+
+    }
+
+    nav.navbar .navbar-collapse .navbar-nav div.dropdown{
+
+        display: none;
+
+    }
+
+    div.responsive{
+
+        display: inline-block;
+
+    }
+
+
+    nav.navbar .social{
+
+        display: none;
+
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        text-align: center;
+    }
+
+    /* Home */
+    .home-container img{
+
+        display: none;
+
+    }
+
+    .service-container{
+        padding: 0px 25px 30px;
+    }
+
+    .work-container {
+        padding: 100px 50px 60px;
+    }
+
+    .work-container .work img{
+        width: 100%;
+        height: 300px;
+        
+    }
+    .notice-container {
+        padding: 100px 100px 140px;
+    }
+
+
+
+    .contact-container img{
+        display: none;
+    }
+
+    footer .footer-container {
+        padding: 50px 75px;
+    }
+
+    footer .footer-title {
+
+        margin-top: 50px;
+    }
+
+    .header-portfolio-container p.project-introduction {
+        padding: 6px 0px;
+
+    }
+
+
+    .portfolio-container .info-container {
+        padding: 100px 200px;
+    }
+
+    .services-container {
+        padding: 70px 0px;
+    }
+
+    .faq-container {
+        padding: 70px 50px 120px;
+    }
+
+    .contacts-container,
+    .notices-container{
+        padding: 50px 0px;
+    }
+
+    .work-container div.front-image {
+        width: 100%;
+        height: 250px!important;
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 767px) {
+
+
+    .service-container .card .circle {
+        width: 200px;
+        height: 200px;
+        padding: 0;
+        margin: auto;
+    }
+
+    footer .footer-container {
+    
+        text-align: center;
+        padding: 50px 15px;
+
+
+    }
+
+    .portfolio-container .info-container {
+        padding: 100px 150px;
+    }
+
+    .services-container.webdesign-container, .services-container.developpement-web-container, .services-container.graphisme-container {
+        padding-top: 0px;
+        text-align: center;
+    }
+
+    .step-container, .services-container h2, .services-container p.service-description{
+
+        text-align: center;
+        padding-right: 0;
+
+    }
+
+    .faq-container {
+        padding: 70px 15px 120px;
+    }
+
+    .coordonnees table th.icon {
+        padding-right: 0px!important;
+    }
+
+    .contacts-container h2 {
+        font-size: 45px;
+
+    }
+
+    .contacts-container,
+    .notices-container{
+        padding: 50px;
+    }
+
+    .contacts-container .contact-title, .contacts-container .contact-description {
+        padding-right: 0px;
+    }
+
+    .notices-container .contact-title, .notices-container .contact-description {
+        padding-right: 0px;
+    }
+
+    .notices-container .contact-description {
+    
+        padding-bottom: 50px;
+    
+    }
+
+
+    
+
+
+}
+
+
+@media screen and (max-width: 550px) {
+
+
+    .home-container {
+        padding: 175px 60px 100px
+
+    }
+
+    .home-container h1 {
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 51px;
+    }
+
+    .home-container img {
+        top: 60px;
+    }
+
+    .service-container .card .circle {
+        width: 200px;
+        height: 200px;
+        padding: 0;
+        margin: auto;
+    }
+
+    .notice-container {
+        padding: 100px 50px 140px;
+    }
+
+    .contact-container {
+        padding: 70px;
+    }
+
+    .contact-container h2 {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 53px;
+    }
+
+    .projects-container{
+
+        padding-left: 20px!important;
+        padding-right: 20px!important;
+
+    }
+
+    .portfolio-contact-container p, .portfolio-contact-container a {
+        font-size: 30px;
+    }
+
+    .portfolio-contact-container {
+        padding: 70px 50px;
+    }
+
+    .header-portfolio-container {
+        padding: 20px 70px 50px;
+    }
+
+    .portfolio-container .info-container {
+        padding: 100px 75px;
+    }
+    
+    .portfolio-container .project-description {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .services-container p.service-description {
+
+        font-size: 26px;
+        line-height: 42px;
+        padding-left: 50px;
+        padding-right: 50px!important;
+    }
+
+    .services-container img {
+        width: 60%;
+        margin-bottom: 30px;
+    }
+
+    .services-container .competence-circle img {
+        width: 100%;
+    }
+
+    .services-container .step-container {
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+
+    .services-container h2 {
+        font-size: 43px;
+        margin-bottom: 27px;
+    }
+
+    .step-container .competence {
+
+        left: 0px;
+    }
+
+    div.disponible{
+
+        display: none;
+    
+    }
+
+    footer .logo-footer{
+
+        position: absolute;
+        top: 600px;
+        right: -200px;
+        opacity: 0.05;
+        height: 700px;
+    
+    }
+    
+
+}

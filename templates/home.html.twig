@@ -1,0 +1,227 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+
+    <!-- HOME -->
+    <div class="container-fluid home-container">
+
+      {% for message in app.flashes('success') %}
+          {% include '_notification.html.twig' with {'main': message, 'secondary': "Il sera publié prochainement" } %}
+      {% endfor %}
+
+      <div class="row">
+        <div class="col-lg-8 col-xl-6">
+          
+          {# <p class="purple bold full-name mt-0"><span class="my-line">--------</span>Aleksander Buczek</p> #}
+          <h1>Bonjour, je suis Aleksander.</h1>
+            <p class="job-title">Développeur Web et Graphiste indépendant.</p>
+            <a href="{{ path('portfolio_index') }}" class="btn btn-orange">Mes réalisations</a>
+            <div class="mouse">
+              <div class="circle">
+
+
+              </div>
+
+            </div>
+            
+        </div>
+        
+        <div class="col-lg-4 col-xl-6">
+
+          <img src="{{ asset('assets/images/coding.svg') }}" alt="Coding Image">
+
+
+        </div>
+
+      </div>
+    
+    
+    </div>
+
+    </div>
+
+   
+    {% include '_services.html.twig' %}
+    
+  
+    <!-- WORK -->
+
+    <div class="container-fluid bg-light">
+      <div class="container work-container" data-aos="fade-up" data-aos-duration="2000">
+        
+        
+        <div class="row">
+          <div class="col-md-6 work-column-1">
+            <p class="purple bold full-name mt-0"><span class="my-line">--------</span>Portfolio</p>
+            <h2>Mes derniers projets.</h2>
+            <p>Je vous présente mes derniers projets. Vous pouvez retrouver l'ensemble de mes créations dans mon <a href="{{ path('portfolio_index') }}">Portfolio</a>. </p>
+            {% for front in fronts %}
+              {% if loop.first %}
+              <div class="front-works">
+                <div class="work" data-aos="fade-up" data-aos-duration="2000">
+                  <a href="{{ path('portfolio_show', { slug: front.slug }) }}">
+                    <div class="front-image" style="background-image: url({{ asset('assets/uploads/' ~ front.frontImage) }});">
+                    </div>
+                  </a>
+                  <h3 class="work-name">{{ front.name }}</h3>
+                  <p class="work-description secondary">{{ front.introduction }}</p>
+                </div>
+              </div>
+              {% endif %}
+            {% endfor %}
+            <a href="{{ path('portfolio_index') }}" class="btn btn-primary d-none d-md-block left">Voir plus de projets</a>
+
+          </div>
+          <div class="col-md-6 work-column-2">
+          {% for front in fronts %}
+            {% if loop.index0 == 1 %}
+            <div class="work" data-aos="fade-up" data-aos-duration="2000">
+              <a href="{{ path('portfolio_show', { slug: front.slug }) }}">
+                <div class="front-image" style="background-image: url({{ asset('assets/uploads/' ~ front.frontImage) }});">
+                </div>
+              </a>
+              <h3 class="work-name">{{ front.name }}</h3>
+              <p class="work-description secondary">{{ front.introduction }}</p>
+            </div>
+            {% endif %}
+          
+            {% if loop.last %}
+            <div class="work" data-aos="fade-up" data-aos-duration="2000">
+              <a href="{{ path('portfolio_show', { slug: front.slug }) }}">
+                <div class="front-image" style="background-image: url({{ asset('assets/uploads/' ~ front.frontImage) }});">
+                </div>
+              </a>
+              <h3 class="work-name">{{ front.name }}</h3>
+              <p class="work-description secondary">{{ front.introduction }}</p>
+            </div> 
+            {% endif %}
+          {% endfor %}
+            <a href="{{ path('portfolio_index') }}" class="btn btn-primary d-block d-md-none">Voir plus de projets</a>
+
+
+          </div>
+
+          
+
+        </div>
+        
+
+
+      </div>
+    </div>
+
+    <!-- NOTICE -->
+    <div class="container-fluid notice-container" data-aos="fade-up" data-aos-duration="2000">
+      <h2 class="text-center">L'avis de mes clients</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        {% for notice in notices %}
+
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ loop.index }}"></button>
+
+
+
+        {% endfor %}
+        </div>
+      <div class="carousel-inner">
+      {% for notice in notices %}
+
+
+          <div class="carousel-item {% if loop.first %}active{% endif %}" data-bs-interval="15000">
+
+      
+              <p class="notice-content">
+                {{ notice.content }} 
+              </p>
+      
+              <div class="client-logo">
+                <img src="{{ asset('assets/uploads/' ~ notice.logo) }}" class="" alt="Logo">
+              </div>
+              <p class="client-name text-center marine m-0">{{ notice.firstName }} {{ notice.lastName }}</p>
+              <p class="client-entreprise text-center">{{ notice.company }}</p>
+            
+          </div>
+        
+
+      {% endfor %}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+    
+
+    <!-- CONTACT -->
+    <div class="container-fluid contact-container bg-purple">
+
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="text-white">Vous avez un projet et cherchez <br>un graphiste freelance ?</h2>
+          <a href="{{ path('contact') }}" class="btn btn-pink">Contactez-moi</a>
+
+        </div>
+        <div class="col-lg-5">
+          <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {# Disponible pour une mission #}
+    <a href="{{ path('contact') }}">
+      <div class="disponible">
+
+        <p class="mb-0">Disponible pour mission <span class="circle"></span></p>
+
+      </div>
+    </a>
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+<script>
+// add-visual-widget.js
+
+jQuery(document).ready(function () {
+
+
+    $(document).scroll(function () {
+        var $nav = $("nav.navbar");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > 10);
+
+        var $logohome = $(".logo-home");
+          $logohome.toggleClass('d-none', $(this).scrollTop() > 10);
+
+
+        var $logo = $(".logo");
+        $logo.toggleClass('d-block', $(this).scrollTop() > 10);
+          
+    
+
+        
+
+
+    });
+    
+});
+
+</script>
+
+{% endblock %}

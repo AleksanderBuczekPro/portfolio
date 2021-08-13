@@ -1,0 +1,62 @@
+<nav id="my-nav" class="navbar sticky-top navbar-expand-lg navbar-light navbar-center {% if app.request.attributes.get('_route') == 'home' %}home-navbar{% endif %}">
+  <div class="container navbar-container">
+    <a class="navbar-brand" href="{{ path('home') }}">
+      {% if app.request.attributes.get('_route') == 'home' %}
+      <img class="logo-home" src="{{ asset('assets/images/logo_home.svg') }}" alt="Logo Home">
+      {% endif %}
+
+      <img class="logo-light {% if app.request.attributes.get('_route') == 'portfolio_show' %}d-block{% else %}d-none{% endif %}" src="{{ asset('assets/images/logo_light.svg') }}" alt="Logo">
+
+      <img class="logo {% if app.request.attributes.get('_route') == 'portfolio_show' %}portfolio {% endif %}  {% if app.request.attributes.get('_route') != 'home' and app.request.attributes.get('_route') != 'portfolio_show' %}d-block{% endif %}" src="{{ asset('assets/images/logo.svg') }}" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars {% if app.request.attributes.get('_route') == 'portfolio_show' %}white{% endif %}"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+        <div class="navbar-nav mx-auto">
+            <a class="nav-link mx-4 {% if app.request.attributes.get('_route') == 'home' %}active{% endif %}" href="{{ path('home') }}">Accueil</a>
+            <a class="nav-link mx-4 {% if app.request.attributes.get('_route') starts with 'portfolio' %}active{% endif %}" href="{{ path('portfolio_index') }}">Portfolio</a>
+            <div class="dropdown">
+              <a class="nav-link mx-4 dropdown-toggle {% if app.request.attributes.get('_route') starts with 'services' %}active{% endif %}" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="{{ path('services_webdesign') }}">
+                  {# <span class="dot bg-yellow"></span> #}
+                  Web Design</a></li>
+                <li><a class="dropdown-item" href="{{ path('services_developpementweb') }}">
+                  {# <span class="dot bg-purple"></span> #}
+                  Développement web</a></li>
+                <li><a class="dropdown-item" href="{{ path('services_graphisme') }}">
+                  {# <span class="dot bg-pink"></span> #}
+                  Graphisme</a></li>
+              </ul>
+            </div>
+            {# Responsive #}
+            
+            {# Responsive Menu #}
+            
+            <div class="responsive">
+              <div class="nav-link title">Services <i class="fas fa-caret-down"></i></div>
+
+                <a class="nav-link responsive mx-4 {% if app.request.attributes.get('_route') starts with 'services_webdesign' %}active{% endif %}" href="{{ path('services_webdesign') }}">Web Design</a>
+                <a class="nav-link responsive mx-4 {% if app.request.attributes.get('_route') starts with 'services_developpementweb' %}active{% endif %}" href="{{ path('services_developpementweb') }}">Développement web</a>
+                <a class="nav-link responsive mx-4 {% if app.request.attributes.get('_route') starts with 'services_graphisme' %}active{% endif %}" href="{{ path('services_graphisme') }}">Graphisme</a>
+
+            </div>
+            <a class="nav-link mx-4 {% if app.request.attributes.get('_route') starts with 'about' %}active{% endif %}" href="{{ path('about') }}">À propos</a>
+            <a class="nav-link mx-4 {% if app.request.attributes.get('_route') starts with 'contact' %}active{% endif %}" href="{{ path('contact') }}">Contact</a>
+        </div>
+        <div class="navbar-nav social ml-auto">
+            <a class="nav-link" href="https://github.com/AleksanderBuczekPro" target="_blank">
+              <i class="fab fa-lg fa-github"></i>
+            </a>
+            <a class="nav-link" href="https://www.linkedin.com/in/aleksander-buczek-505a9912a/?originalSubdomain=fr" target="_blank">
+              <i class="fab fa-lg fa-linkedin-in"></i>
+            </a>
+            {# <a class="nav-link btn-my-light mx-4 {% if app.request.attributes.get('_route') starts with 'contact' %}active{% endif %}" href="{{ path('contact') }}">Mon CV</a> #}
+        </div>
+    </div>
+  </div>
+</nav>

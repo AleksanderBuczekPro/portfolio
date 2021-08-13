@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Développement Web - Services - 
+{% endblock %}
+
+{% block body %}
+
+<div class="container services-container webdesign-container">
+    <div class="row">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none">
+            <img src="{{ asset('assets/images/web.svg') }}" alt="Development Image">
+        </div>
+
+        <div class="col-lg-7">
+            <p class="purple bold full-name mt-0"><span class="my-line">--------</span>Développement web</p>
+            <h2 class="service-title">Développement web</h2>
+            <p class="service-description">Je m'occupe de tout le processus de développement de votre site Internet, qu'il soit un site vitrine ou un site avec des fonctionnalités plus complexes.</p>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block">
+            <img src="{{ asset('assets/images/web.svg') }}" alt="Development Image" data-aos="fade-left" data-aos-duration="2000">
+        </div>
+
+    </div>
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/app_development.svg') }}" alt="Development Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Développement</h3>
+            <p class="service-step-description">Grâce à mon expérience de plusieurs années, je développe pour vous un site de A à Z parfaitement optimisé sur tous les supports. Le site est testé et validé à la fin de cette étape.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        {# Responsive #}
+        <div class="col-12 d-md-block d-lg-none step-image-container">
+            <img src="{{ asset('assets/images/formation.svg') }}" alt="Development Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Livraison et formation</h3>
+            <p class="service-step-description">Après avoir validé ensemble l’entièreté du site internet, je vous propose le cas échéant une formation complète à l’utilisation de votre site internet.
+            </p>
+        </div>
+
+        <div class="col-lg-6 d-none d-lg-block step-image-container">
+            <img src="{{ asset('assets/images/formation.svg') }}" alt="Development Image">
+        </div>
+
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-duration="2000">
+
+        <div class="col-lg-6 step-image-container">
+            <img src="{{ asset('assets/images/maintenance.svg') }}" alt="Development Image">
+        </div>
+
+        <div class="col-lg-6 step-container">
+            <h3 class="service-step-title">Suivi et maintenance</h3>
+            <p class="service-step-description">Une fois votre site internet en ligne, j'assure son suivi et sa maintenance. Contactez-moi pour plus de renseignements.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid bg-light">
+    <div class="container faq-container bg-light">
+        
+        <h2 class="text-center mb-2">Questions fréquentes</h2>
+
+        <div class="row">
+
+        <div class="col-10 mx-auto">
+        
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Peut-on profiter de vos prestations à distance ?
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Bien sûr ! Nous disposons de différents outils (Skype, Teamviewer, Slack..) pour communiquer et mener à bien votre projet. N'hésitez pas à me contacter même si vous êtes loin géographiquement. </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Combien de temps nécessite la création d'un site internet ?
+                </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Le temps nécessaire à la réalisation d'un site internet est variable d'un projet à un autre. Je vous invite à me contacter pour discuter de votre projet, vous pourrez alors obtenir un délai plus précis en fonction de votre besoin.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Quels sont vos tarifs ?
+                </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Tout comme le délai, le tarif d'un projet peut être très variable et dépend de sa complexité. Il est établit en fonction du temps de travail estimé en heures.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed no-border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    De quelle manière facturez-vous ?
+                </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Sachant qu’un site représente des frais, je peux vous demander un acompte de 30% au démarrage des travaux de votre site.<br>
+                    Le solde de 70% est à régler à la livraison du site, une fois sa mise en ligne effectuée.</a></div>
+                </div>
+            </div>
+            
+
+            </div>
+
+        </div>
+
+        </div>
+        
+    </div>
+</div>
+
+<div class="container-fluid contact-container bg-purple">
+
+    <div class="container-fluid contact-container bg-purple">
+
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="text-white">Vous souhaitez créer<br>un site internet ?</h2>
+            <a href="{{ path('contact') }}" class="btn btn-pink">Demande de devis gratuit</a>
+    
+          </div>
+          <div class="col-lg-5">
+            <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+    
+          </div>
+    
+        </div>
+    
+      </div>
+
+
+  </div>
+
+
+
+{% endblock %}
