@@ -31,5 +31,49 @@ class Search{
         
     }
 
+    public function getPrevious($project){
+
+        $qb = $this->manager->createQueryBuilder();
+
+        $qb->select('p')
+            ->from('App\Entity\Project', 'p')
+            ->where('p.date < :date')
+            ->orderBy('p.date', 'DESC')
+            ->setParameter('date', $project->getDate())
+            ->setMaxResults(1);
+
+        $query = $qb->getQuery();
+
+        $previous = $query->execute();
+        
+        if(!$previous){
+            return null;
+        }
+        return $previous[0];
+        
+    }
+
+    public function getNext($project){
+
+        $qb = $this->manager->createQueryBuilder();
+
+        $qb->select('p')
+            ->from('App\Entity\Project', 'p')
+            ->where('p.date > :date')
+            ->orderBy('p.date', 'ASC')
+            ->setParameter('date', $project->getDate())
+            ->setMaxResults(1);
+
+        $query = $qb->getQuery();
+
+        $next = $query->execute();
+
+        if(!$next){
+            return null;
+        }
+        return $next[0];
+        
+    }
+
 
 }

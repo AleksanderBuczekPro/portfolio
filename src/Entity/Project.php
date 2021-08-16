@@ -87,6 +87,16 @@ class Project
      */
     private $front;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $client;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Category;
+
     public function __construct()
     {
         $this->visuals = new ArrayCollection();
@@ -300,6 +310,30 @@ class Project
     public function setFront(bool $front): self
     {
         $this->front = $front;
+
+        return $this;
+    }
+
+    public function getClient(): ?string
+    {
+        return $this->client;
+    }
+
+    public function setClient(string $client): self
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(string $Category): self
+    {
+        $this->Category = $Category;
 
         return $this;
     }

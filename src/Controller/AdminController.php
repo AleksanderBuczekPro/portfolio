@@ -29,8 +29,7 @@ class AdminController extends AbstractController
      */
     public function index(ProjectRepository $repo): Response
     {
-        $projects = $repo->findAll();
-        
+        $projects = $repo->findBy(array(), array('date' => 'DESC'));
 
         return $this->render('admin/project/index.html.twig', [
             'projects' => $projects,

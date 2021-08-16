@@ -132,7 +132,7 @@
     nav.navbar .navbar-collapse {
         height: 100vh!important;
         position: relative;
-        top: -29px;
+        top: 50px;
     }
     
     nav.navbar img.logo{
@@ -264,6 +264,11 @@
         height: 300px!important;
     }
 
+    .project-infos-container hr{
+
+        margin-bottom: 0;
+    
+    }
 
 
 

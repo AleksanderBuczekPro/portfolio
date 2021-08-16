@@ -13,6 +13,7 @@
     --marine-color: #01123C!important;
     --green-color: #39c690!important;
     --green-transparent-color: rgba(50, 155, 115, 0.2)!important;
+    --marine-dark-color: #00072d!important;
     
 }
 
@@ -25,6 +26,7 @@
 .yellow{ color:  var(--yellow-color)!important; }
 .light{ color: var(--light-color)!important; }
 .marine{ color: var(--marine-color)!important; }
+.marine-dark{ color: var(--marine-dark-color)!important; }
 .green{ color: var(--green-color)!important; }
 .green-transparent{ color: var(--green-transparent-color)!important; }
 .white{ color: #fff!important;}
@@ -32,12 +34,21 @@
 .white{ color: #fff; }
 
 .bg-marine{ background-color: var(--marine-color)!important; }
+.bg-marine-dark{ background-color: var(--marine-dark-color)!important; }
 .bg-pink{ background-color: var(--pink-color)!important; }
 .bg-yellow{ background-color:  var(--yellow-color)!important; }
 .bg-purple{ background-color: var(--purple-color)!important; }
 .bg-dark{ background-color: var(--dark-color)!important; }
 .bg-green{ background-color: var(--green-color)!important; }
 .bg-green-transparent{ background-color: var(--green-transparent-color)!important; }
+
+.full-transparent{
+
+    color: transparent!important;
+    background-color: transparent!important;
+    cursor: default;
+
+}
 
 html,body
 {
@@ -1395,20 +1406,16 @@ div.work-card:hover .overlay-image{
 
 }
 
-p.work-title{
-
+p.work-title {
     position: relative;
     top: 50%;
-    transform: translateY(-50%); 
-
+    transform: translateY(-50%);
     text-align: center;
-
     font-family: 'Poppins';
     color: white;
     font-size: 30px;
+    line-height: 41px;
     font-weight: 600;
-    
-
 }
 
 .portfolio-contact-container{
@@ -1470,6 +1477,9 @@ p.work-title{
 
     color: white;
 
+    margin-bottom: 0;
+    
+
 }
 
 .header-portfolio-container p.project-introduction {
@@ -1478,7 +1488,8 @@ p.work-title{
     letter-spacing: 0px;
     line-height: 33px;
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 300;
+
 }
 
 .portfolio-container .info-container{
@@ -1972,3 +1983,61 @@ div.disponible span.circle{
 
 }
 
+.project-infos-container{
+
+    margin-top: 82px;
+
+}
+
+.project-infos-container .title{
+
+    color: rgba(255,255,255,0.3);
+
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 25px;
+    width: 80px;
+    margin: 0 auto 4px;
+
+    text-transform: uppercase;
+    font-size: 13px;
+
+    text-align: center;
+
+}
+
+.project-infos-container .content{
+
+    text-align: center;
+
+}
+
+.portfolio-navigation-container{
+
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+}
+
+.portfolio-navigation-container a{
+
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+
+}
+
+.portfolio-navigation-container a:hover{
+
+    color: rgba(255,255,255,1);
+
+}
+
+.portfolio-navigation-container i{
+
+    margin: 0 12px;
+
+}
+
+
+hr:not([size]) {
+    height: 0px;
+}

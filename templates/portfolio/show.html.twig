@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio{% endblock %}
+{% block title %}{{ project.name }} - {% endblock %}
 
 {% block body %}
 
@@ -8,14 +8,49 @@
     <div class="container-fluid header-portfolio-container" style="background-color: {{ project.color }}">
         <div class="row">
             <div class="col-12">
-                <div class="header">
+                <div class="header container">
                     <h1 class="project-title text-center">{{ project.name }}</h1>
                     <p class="project-introduction text-center">{{ project.introduction }}</p>
-                    <div class="project-navigation text-center mt-4">
-                        <a class="btn-circle" href=""><i class="fas fa-chevron-left left text-white-50"></i>
-                        </a>
-                        <a class="btn-circle" href=""><i class="fas fa-chevron-right right text-white-50"></i></a>
+
+
+                    <div class="row text-center project-infos-container justify-content-center">
+
+
+                    {% set trans_month_hash = { 
+                            "1": "Janvier", 
+                            "2": "Février", 
+                            "3": "Mars", 
+                            "4": "Avril", 
+                            "5": "Mai", 
+                            "6": "Juin", 
+                            "7": "Juillet",
+                            "8": "Août",
+                            "9": "Septembre", 
+                            "10": "Octobre",
+                            "11": "Novembre", 
+                            "12": "Décembre"
+                        } 
+                    %}
+
+
+                        <div class="col-md-4 col-lg-3 col-xl-3 column">
+                            <hr>
+                            <p class="title">Date</p>
+                            <p class="content white">{{ trans_month_hash[project.date|date('n')] ~ ' ' ~ project.date|date('Y')}}</p>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-xl-3 column">
+                            <hr>
+                            <p class="title">Client</p>
+                            <p class="content white">{{ project.client }}</p>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-xl-3 column">
+                            <hr>
+                            <p class="title">Catégorie</p>
+                            <p class="content white">{{ project.category }}</p>
+                        </div>
+
                     </div>
+
                 </div>
                 
 
@@ -55,6 +90,15 @@
 
                 {% endfor %}
                 
+            </div>
+        </div>
+        <div class="container-fluid bg-marine-dark">
+            <div class="container portfolio-navigation-container">
+                <div class="row">
+                    <div class="col-4 text-center"><a href="{% if next %} {{ path('portfolio_show', { slug: next.slug }) }} {% endif %}" class="previous {% if next is null %} full-transparent {% endif %}"><i class="fas fa-chevron-left"></i> <span class="d-none d-md-inline">Projet Précédent</span></a></div>
+                    <div class="col-4 text-center"><a href="{{ path('portfolio_index') }}"><i class="fas fa-2x fa-th"></i></a></div>
+                    <div class="col-4 text-center"><a href="{% if previous %}  {{ path('portfolio_show', { slug: previous.slug }) }} {% endif %}" class="next {% if previous is null %} full-transparent {% endif %}"><span class="d-none d-md-inline">Projet Suivant</span> <i class="fas fa-chevron-right"></i></a></div>
+                </div>
             </div>
         </div>
 
