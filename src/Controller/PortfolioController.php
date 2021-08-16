@@ -32,9 +32,6 @@ class PortfolioController extends AbstractController
     {
         $previous = $search->getPrevious($project);
         $next = $search->getNext($project);
-
-        dump($previous);
-        dump($next);
         
         return $this->render('portfolio/show.html.twig', [
             'project' => $project,
