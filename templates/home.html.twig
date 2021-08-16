@@ -7,41 +7,33 @@
 {% block body %}
 
     <!-- HOME -->
-    <div class="container-fluid home-container">
+    <div class="container-fluid home-container-fluid px-0 bg-purple">
+      <div class="container home-container">
 
-      {% for message in app.flashes('success') %}
-          {% include '_notification.html.twig' with {'main': message, 'secondary': "Il sera publié prochainement" } %}
-      {% endfor %}
+        {% for message in app.flashes('success') %}
+            {% include '_notification.html.twig' with {'main': message, 'secondary': "Il sera publié prochainement" } %}
+        {% endfor %}
 
-      <div class="row">
-        <div class="col-lg-8 col-xl-6">
-          
-          {# <p class="purple bold full-name mt-0"><span class="my-line">--------</span>Aleksander Buczek</p> #}
-          <h1>Bonjour, je suis Aleksander.</h1>
-            <p class="job-title">Développeur Web et Graphiste indépendant.</p>
-            <a href="{{ path('portfolio_index') }}" class="btn btn-orange">Mes réalisations</a>
-            <div class="mouse">
-              <div class="circle">
-
-
-              </div>
-
-            </div>
+        <div class="row">
+          <div class="col-lg-8 col-xl-6">
             
+            {# <p class="purple bold full-name mt-0"><span class="my-line">--------</span>Aleksander Buczek</p> #}
+            <h1>Bonjour, je suis Aleksander.</h1>
+              <p class="job-title">Développeur Web et Graphiste indépendant.</p>
+              <a href="{{ path('portfolio_index') }}" class="btn btn-orange">Mes réalisations</a>
+              <div class="mouse">
+                <div class="circle">
+                </div>
+              </div>  
+          </div>
+          
+          <div class="col-lg-4 col-xl-6">
+            <img src="{{ asset('assets/images/coding.svg') }}" alt="Coding Image">
+          </div>
+
         </div>
-        
-        <div class="col-lg-4 col-xl-6">
-
-          <img src="{{ asset('assets/images/coding.svg') }}" alt="Coding Image">
-
-
-        </div>
-
+ 
       </div>
-    
-    
-    </div>
-
     </div>
 
    
@@ -115,67 +107,71 @@
     </div>
 
     <!-- NOTICE -->
+    {% if notices|length > 0 %}
     <div class="container-fluid notice-container" data-aos="fade-up" data-aos-duration="2000">
       <h2 class="text-center">L'avis de mes clients</h2>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          {% for notice in notices %}
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ loop.index }}"></button>
+
+
+
+          {% endfor %}
+          </div>
+        <div class="carousel-inner">
         {% for notice in notices %}
 
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ loop.index }}"></button>
 
+            <div class="carousel-item {% if loop.first %}active{% endif %}" data-bs-interval="15000">
 
+        
+                <p class="notice-content">
+                  {{ notice.content }} 
+                </p>
+        
+                <div class="client-logo">
+                  <img src="{{ asset('assets/uploads/' ~ notice.logo) }}" class="" alt="Logo">
+                </div>
+                <p class="client-name text-center marine m-0">{{ notice.firstName }} {{ notice.lastName }}</p>
+                <p class="client-entreprise text-center">{{ notice.company }}</p>
+              
+            </div>
+          
 
         {% endfor %}
         </div>
-      <div class="carousel-inner">
-      {% for notice in notices %}
-
-
-          <div class="carousel-item {% if loop.first %}active{% endif %}" data-bs-interval="15000">
-
-      
-              <p class="notice-content">
-                {{ notice.content }} 
-              </p>
-      
-              <div class="client-logo">
-                <img src="{{ asset('assets/uploads/' ~ notice.logo) }}" class="" alt="Logo">
-              </div>
-              <p class="client-name text-center marine m-0">{{ notice.firstName }} {{ notice.lastName }}</p>
-              <p class="client-entreprise text-center">{{ notice.company }}</p>
-            
-          </div>
-        
-
-      {% endfor %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  </div>
+    {% endif %}
+
 
     
 
     <!-- CONTACT -->
-    <div class="container-fluid contact-container bg-purple">
+    <div class="container-fluid bg-purple">
+      <div class="container contact-container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="text-white">Vous avez un projet et cherchez <br>un graphiste freelance ?</h2>
+            <a href="{{ path('contact') }}" class="btn btn-pink">Contactez-moi</a>
 
-      <div class="row">
-        <div class="col-lg-7">
-          <h2 class="text-white">Vous avez un projet et cherchez <br>un graphiste freelance ?</h2>
-          <a href="{{ path('contact') }}" class="btn btn-pink">Contactez-moi</a>
+          </div>
+          <div class="col-lg-5">
+            <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+
+          </div>
 
         </div>
-        <div class="col-lg-5">
-          <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
-
-        </div>
-
       </div>
 
     </div>

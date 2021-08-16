@@ -37,22 +37,23 @@
     </div> #}
 
     <!-- CONTACT -->
-    <div class="container-fluid contact-container bg-light">
-
-        <div class="row">
-            <div class="col-lg-7">
-            <h2 class="text-dark">Alors, <br>cela vous plaît ?</h2>
-            <a href="{{ path('contact') }}" class="btn btn-primary">Travaillons ensemble</a>
-    
+    <div class="container-fluid bg-light">
+        <div class="container contact-container">
+            <div class="row">
+                <div class="col-lg-7">
+                <h2 class="text-dark">Alors, <br>cela vous plaît ?</h2>
+                <a href="{{ path('contact') }}" class="btn btn-primary">Travaillons ensemble</a>
+        
+                </div>
+                <div class="col-lg-5">
+                <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
+        
+                </div>
+        
             </div>
-            <div class="col-lg-5">
-            <img src="{{ asset('assets/images/workspace.svg') }}" alt="Workspace Image">
-    
-            </div>
-    
         </div>
-    
-    </div>
+  
+      </div>
 
 
 {% endblock %}

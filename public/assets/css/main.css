@@ -626,12 +626,17 @@ img.icon-card{
 
 
 /* Home container */
-.home-container{
+.home-container-fluid{
+
     position: relative;
     top: -104px;
 
-    padding: 204px 125px 100px;
-    background-color: var(--purple-color);
+}
+.home-container{
+
+
+    padding: 204px 65px 100px;
+    /* background-color: var(--purple-color); */
 
     color: white;
 
@@ -1271,7 +1276,7 @@ img.decor-image{
 /* CONTACT Container */
 .contact-container{
 
-    padding: 150px 60px 130px 120px;
+    padding: 150px 0px 130px 65px;
     position: relative;
     overflow: hidden;
 
@@ -1287,7 +1292,7 @@ img.decor-image{
     position: absolute;
     /* top: 75px; */
     top: 53px;
-    right: 0;
+    right: -50px;
     height: 570px;
 }
 
@@ -1324,6 +1329,22 @@ footer .logo-footer{
     right: -200px;
     opacity: 0.05;
     height: 700px;
+
+}
+
+footer a{
+
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.1);
+
+}
+
+footer a:hover{
+
+    background-color: rgba(255,255,255,1);
+    font-weight: 500;
 
 }
 
