@@ -3,16 +3,16 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\VisualRepository;
+use App\Repository\MobileRepository;
 
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * @ORM\Entity(repositoryClass=VisualRepository::class)
+ * @ORM\Entity(repositoryClass=MobileRepository::class)
  * @Vich\Uploadable
  */
-class Visual
+class Mobile
 {
     /**
      * @ORM\Id
@@ -23,7 +23,7 @@ class Visual
 
 
     /**
-     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="visuals")
+     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="mobiles")
      * @ORM\JoinColumn(nullable=false)
      */
     private $project;
@@ -34,7 +34,7 @@ class Visual
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="visual_images", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="mobile_images", fileNameProperty="imageName", size="imageSize")
      * 
      * @var File|null
      */

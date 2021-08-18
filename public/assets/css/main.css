@@ -3,6 +3,7 @@
     --grey-color: #767691!important;
     --grey-2-color: #505573!important;
     --purple-color: #5a36ff!important;
+    /* --purple-color: #410ed3!important; */
     --purple-transparent-color: rgba(90,54,255,0.75)!important;
     --dark-color: #0F1221!important;
     --beige-color: #F3CFB2!important;
@@ -1542,7 +1543,8 @@ table .project-color{
 
 
 
-.visuals fieldset{
+.visuals fieldset,
+.mobiles fieldset{
 
     margin-bottom: 0!important;
 

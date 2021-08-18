@@ -52,6 +52,7 @@ class AdminController extends AbstractController
 
                 
                 $visualFiles = $form->get('visuals')->getData();
+                $mobileFiles = $form->get('mobiles')->getData();
 
                 // Visuals
                 foreach($visualFiles as $visual){
@@ -59,6 +60,15 @@ class AdminController extends AbstractController
                     $visual->setProject($project);
                    
                     $manager->persist($visual);
+                    
+                }
+
+                 // Mobiles
+                 foreach($mobileFiles as $mobile){
+
+                    $mobile->setProject($project);
+                   
+                    $manager->persist($mobile);
                     
                 }
 
@@ -125,6 +135,7 @@ class AdminController extends AbstractController
 
                 
                 $visualFiles = $form->get('visuals')->getData();
+                $mobileFiles = $form->get('mobiles')->getData();
 
                 // Visuals
                 foreach($visualFiles as $visual){
@@ -132,6 +143,15 @@ class AdminController extends AbstractController
                     $visual->setProject($project);
                    
                     $manager->persist($visual);
+                    
+                }
+
+                // Mobiles
+                foreach($mobileFiles as $mobile){
+
+                    $mobile->setProject($project);
+                   
+                    $manager->persist($mobile);
                     
                 }
 

@@ -48,6 +48,12 @@ class Project
     private $visuals;
 
     /**
+     * @ORM\OneToMany(targetEntity=Mobile::class, mappedBy="project", cascade={"persist"})
+     * 
+     */
+    private $mobiles;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $introduction;
@@ -100,6 +106,7 @@ class Project
     public function __construct()
     {
         $this->visuals = new ArrayCollection();
+        $this->mobiles = new ArrayCollection();
     }
 
 
@@ -198,6 +205,36 @@ class Project
             // set the owning side to null (unless already changed)
             if ($visual->getProject() === $this) {
                 $visual->setProject(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Mobile[]
+     */
+    public function getMobiles(): Collection
+    {
+        return $this->mobiles;
+    }
+
+    public function addMobile(Mobile $mobile): self
+    {
+        if (!$this->mobiles->contains($mobile)) {
+            $this->mobiles[] = $mobile;
+            $mobile->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMobile(Mobile $mobile): self
+    {
+        if ($this->mobiles->removeElement($mobile)) {
+            // set the owning side to null (unless already changed)
+            if ($mobile->getProject() === $this) {
+                $mobile->setProject(null);
             }
         }
 

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Project;
 use App\Form\VisualType;
+use App\Form\MobileType;
 use App\Form\ApplicationType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -61,6 +62,15 @@ class ProjectType extends ApplicationType
             ])
             ->add('visuals', CollectionType::class, [
                 'entry_type' => VisualType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'delete_empty' => true,
+
+                'label' => false
+            ])
+            ->add('mobiles', CollectionType::class, [
+                'entry_type' => MobileType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
                 'allow_delete' => true,

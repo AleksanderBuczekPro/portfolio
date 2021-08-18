@@ -28,6 +28,7 @@
                         <th scope="col">Slug</th>
                         <th scope="col" class="col-3">Introduction</th>
                         <th scope="col">Images</th>
+                        <th scope="col">Mobile</th>
                         <th scope="col" class="col-4">Description</th>
                         <th scope="col">Date</th>
                         <th scope="col" class="col-2" colspan="2"></th>
@@ -60,6 +61,22 @@
                                     {% else %}
 
                                         Aucune image
+
+                                    {% endif %}
+                                    
+                                </td>
+                                <td>
+                                    {% if project.mobiles|length > 0 %}
+
+                                        {% for mobile in project.mobiles %}
+                                            <a href="{{ asset('assets/uploads/' ~ mobile.imageName) }}" target="_blank">
+                                                <img src="{{ asset('assets/uploads/' ~ mobile.imageName) }}" class="project-mobile" alt="Image">
+                                            </a>
+                                        {% endfor %}
+
+                                    {% else %}
+
+                                        Aucune image mobile
 
                                     {% endif %}
                                     

@@ -125,12 +125,12 @@
                             </div>
                         </div>
 
-                         <!-- Visuals -->
+                         <!-- Visuals and Mobiles -->
                          <div class="row">   
-                            <div class="col-12">
+                            <!-- <div class="col-6">
                                 {{ form_label(form.visuals) }}
-                            </div>
-                            <div class="col-12">
+                            </div> -->
+                            <div class="col-6">
                                 <div id="visual-fields-list"
                                 data-prototype="{{ form_widget(form.visuals.vars.prototype)|e }}"
                                 data-widget-tags="{{ '<div class="visuals"></div>'|e }}"
@@ -141,23 +141,33 @@
                                             {{ form_errors(visual) }}
                                             {{ form_widget(visual) }}
                                         </div>
-                                        <a class="btn btn-danger delete-visual" data-delete=""> Supprimer </a>
+                                        
                                     {% endfor %}
 
                                 </div>
-                                
-
-                                
-
-
-                            </div>
-                            <div class="col-12">
                                 <button type="button"
                                 class="add-another-collection-widget btn btn-light mt-4 float-end"
                                 data-list-selector="#visual-fields-list">Ajouter un visuel</button>
-
                             </div>
-                                  
+                            <div class="col-6">
+                                <div id="visual-fields-list-mobile"
+                                data-prototype="{{ form_widget(form.mobiles.vars.prototype)|e }}"
+                                data-widget-tags="{{ '<div class="mobiles"></div>'|e }}"
+                                data-widget-counter="{{ form.mobiles|length }}">
+                                
+                                    {% for mobile in form.mobiles %}
+                                        <div>
+                                            {{ form_errors(mobile) }}
+                                            {{ form_widget(mobile) }}
+                                        </div>
+                                        
+                                    {% endfor %}
+
+                                </div>
+                                <button type="button"
+                                class="add-another-collection-widget-mobile btn btn-light mt-4 float-end"
+                                data-list-selector="#visual-fields-list-mobile">Ajouter un visuel mobile</button>
+                            </div>                               
                         </div>
 
                         <!-- Buttons -->
@@ -231,6 +241,48 @@ jQuery(document).ready(function () {
 
         });
     });
+
+     /********** MOBILE ***********/
+     jQuery('.add-another-collection-widget-mobile').click(function (e) {
+
+        var list = jQuery(jQuery(this).attr('data-list-selector'));
+
+        // Try to find the counter of the list or use the length of the list
+        var counter = list.data('widget-counter') || list.children().length;
+
+        // grab the prototype template
+        var newWidget = list.attr('data-prototype');
+
+        // replace the "__name__" used in the id and name of the prototype
+        // with a number that's unique to your emails
+        // end name attribute looks like name="contact[emails][2]"
+        newWidget = newWidget.replace(/__name__/g, counter);
+        // Increase the counter
+        counter++;
+        // And store it, the length cannot be used if deleting widgets is allowed
+        list.data('widget-counter', counter);
+
+        // Delete Button
+        var button = '<a class="btn btn-danger delete-mobile" data-delete="' + counter + '"> Supprimer </a>'
+
+        // create a new list element and add it to the list
+        var newElem = jQuery(list.attr('data-widget-tags')).html(newWidget+ button);
+        newElem.appendTo(list);
+
+
+        jQuery('.delete-mobile').click(function (e) {
+
+            var id = $(this).data("delete")-1;
+            
+            $( "#project_mobiles_" + id).next( "a").remove();
+            $( "#project_mobiles_" + id).remove();
+            
+
+
+        });
+    });
+
+
 
     
     

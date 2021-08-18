@@ -122,7 +122,8 @@ button.accordion-button:focus{
 }
 
 
-.btn.delete-visual {
+.btn.delete-visual,
+.btn.delete-mobile {
     font-size: 14px;
     padding: 10px 20px;
 
