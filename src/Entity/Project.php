@@ -103,6 +103,11 @@ class Project
      */
     private $Category;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $keywords;
+
     public function __construct()
     {
         $this->visuals = new ArrayCollection();
@@ -371,6 +376,18 @@ class Project
     public function setCategory(string $Category): self
     {
         $this->Category = $Category;
+
+        return $this;
+    }
+
+    public function getKeywords(): ?string
+    {
+        return $this->keywords;
+    }
+
+    public function setKeywords(?string $keywords): self
+    {
+        $this->keywords = $keywords;
 
         return $this;
     }

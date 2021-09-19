@@ -56,6 +56,47 @@
                                             <a href="{{ asset('assets/uploads/' ~ visual.imageName) }}" target="_blank">
                                                 <img src="{{ asset('assets/uploads/' ~ visual.imageName) }}" class="project-visual" alt="Image">
                                             </a>
+
+                                            {% set size = visual.imageSize %}
+                                            {% set alert = "secondary" %}
+
+                                            {% if size >= 1073741824 %}
+
+                                                {% set size = size / 1073741824 %}
+                                                {% set size = size|number_format(2, '.', ',')  ~ 'GB' %}
+
+                                                {% set alert = "danger" %}
+
+                                            {% elseif size >= 1048576 %}
+
+                                                {% set size = size / 1048576 %}
+                                                {% set size = size|number_format(2, '.', ',')  ~ 'MB' %}
+
+                                                {% set alert = "danger" %}
+
+                                            {% elseif size >= 1024 %}
+
+                                                {% set size = size / 1024 %}
+                                                {% set size = size|number_format(2, '.', ',')  ~ 'KB' %}
+
+                                            {% elseif size > 1 %}
+
+                                                {% set size = size ~ 'bytes' %}
+
+                                            {% elseif size == 1 %}
+
+                                                {% set size = size ~ 'byte' %}
+                                            
+                                            {% else %}
+
+                                                {% set size = '0 byte' %}
+
+                                            {% endif %}
+
+
+
+
+                                            <p class="text-{{alert}}">{{ size }}</p>
                                         {% endfor %}
 
                                     {% else %}
@@ -72,6 +113,47 @@
                                             <a href="{{ asset('assets/uploads/' ~ mobile.imageName) }}" target="_blank">
                                                 <img src="{{ asset('assets/uploads/' ~ mobile.imageName) }}" class="project-mobile" alt="Image">
                                             </a>
+                                            {% set size = mobile.imageSize %}
+                                            {% set alert = "secondary" %}
+
+                                            {% if size >= 1073741824 %}
+
+                                                {% set size = size / 1073741824 %}
+                                                {% set size = size|number_format(2, '.', ',')  ~ 'GB' %}
+
+                                                {% set alert = "danger" %}
+
+                                            {% elseif size >= 1048576 %}
+
+                                                {% set size = size / 1048576 %}
+                                                {% set size = size|number_format(2, '.', ',')  ~ 'MB' %}
+
+                                                {% set alert = "danger" %}
+
+                                            {% elseif size >= 1024 %}
+
+                                                {% set size = size / 1024 %}
+                                                {% set size = size|number_format(2, '.', ',')  ~ 'KB' %}
+
+                                            {% elseif size > 1 %}
+
+                                                {% set size = size ~ 'bytes' %}
+
+                                            {% elseif size == 1 %}
+
+                                                {% set size = size ~ 'byte' %}
+                                            
+                                            {% else %}
+
+                                                {% set size = '0 byte' %}
+
+                                            {% endif %}
+
+
+
+
+                                            <p class="text-{{alert}}">{{ size }}</p>
+
                                         {% endfor %}
 
                                     {% else %}

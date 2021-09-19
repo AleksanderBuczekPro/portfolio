@@ -8,12 +8,36 @@
         <div class="row">
             {% for project in projects %}
 
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4" data-aos="fade-up" data-aos-duration="2000">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
 
                     <a href="{{ path('portfolio_show', { slug: project.slug }) }}">
                         <div class="work-card" style="background-image: url({{ asset('assets/uploads/' ~ project.frontImage) }});">
                             <div class="overlay-image" style="background-color: {{ project.color ~ 'EF'}}">
                                 <p class="work-title mx-auto">{{ project.name }}</p>
+
+                                <div class="text-center badges">
+                                    {% set trans_month_hash = { 
+                                        "1": "Janvier", 
+                                        "2": "Février", 
+                                        "3": "Mars", 
+                                        "4": "Avril", 
+                                        "5": "Mai", 
+                                        "6": "Juin", 
+                                        "7": "Juillet",
+                                        "8": "Août",
+                                        "9": "Septembre", 
+                                        "10": "Octobre",
+                                        "11": "Novembre", 
+                                        "12": "Décembre"
+                                        } 
+                                    %}
+                                    <span class="my-badge">
+                                        <i style="font-size: 0.5rem; position: relative; bottom: 2px;" class="fas fa-xs fa-circle"></i> {{ project.category }}
+                                    </span>
+                                    <!-- <span class="my-badge">
+                                        <i class="far fa-calendar-alt"></i> {{ trans_month_hash[project.date|date('n')] ~ ' ' ~ project.date|date('Y')}}
+                                    </span> -->
+                                </div>
                             </div>
                             
                         </div>

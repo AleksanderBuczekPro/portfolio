@@ -157,3 +157,37 @@ button.accordion-button:focus{
     padding: 15px 20px!important;
 
 }
+
+.my-badge{
+
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: white;
+    padding: 7px 10px;
+    border-radius: 6px;
+    margin: 12px 7px 7px;
+    font-size: 15px;
+    display: inline-block;
+
+}
+
+.my-badge.category{
+
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+
+}
+
+.my-badge.keyword{
+
+    margin-right: 4px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.my-badge i{
+
+    margin-right: 5px;
+
+
+}

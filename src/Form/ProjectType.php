@@ -49,6 +49,7 @@ class ProjectType extends ApplicationType
             ->add('name', TextType::class, $this->getConfiguration("Nom du projet", "Entrez le nom du projet"))
             ->add('client', TextType::class, $this->getConfiguration("Client", "Client"))
             ->add('category', TextType::class, $this->getConfiguration("Catégorie", "Catégorie"))
+            ->add('keywords', TextType::class, $this->getConfiguration("Mots-clés (espacés par un ;)", "Mots clés"))
             ->add('introduction', TextareaType::class, $this->getConfiguration("Introduction", "Entrez l'introduction au projet"))
             ->add('subtitle', TextType::class, $this->getConfiguration("Sous-titre", "Entrez le sous-titre du projet"))
             ->add('description', TextareaType::class, $this->getConfiguration("Description", "Décrivez votre projet"))

@@ -402,7 +402,11 @@
     }
 
     .header-portfolio-container {
-        padding: 20px 70px 50px;
+        padding: 20px 0px 50px;
+    }
+
+    .project-infos-container {
+        margin-top: 41px;
     }
 
     .portfolio-container .info-container {

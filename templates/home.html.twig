@@ -60,7 +60,7 @@
                     </div>
                   </a>
                   <h3 class="work-name">{{ front.name }}</h3>
-                  <p class="work-description secondary">{{ front.introduction }}</p>
+                  <p class="work-description secondary">{{ front.description|length > 200 ? front.description|slice(0, 200) ~ '...' : front.description }}</p>
                 </div>
               </div>
               {% endif %}
@@ -77,7 +77,7 @@
                 </div>
               </a>
               <h3 class="work-name">{{ front.name }}</h3>
-              <p class="work-description secondary">{{ front.introduction }}</p>
+              <p class="work-description secondary">{{ front.description|length > 200 ? front.description|slice(0, 200) ~ '...' : front.description }}</p>
             </div>
             {% endif %}
           
@@ -88,7 +88,7 @@
                 </div>
               </a>
               <h3 class="work-name">{{ front.name }}</h3>
-              <p class="work-description secondary">{{ front.introduction }}</p>
+              <p class="work-description secondary">{{ front.description|length > 200 ? front.description|slice(0, 200) ~ '...' : front.description }}</p>
             </div> 
             {% endif %}
           {% endfor %}
