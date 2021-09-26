@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block meta_description %}
+  <meta name="description" content="{{ project.description }}">
+{% endblock %}
+
 {% block title %}{{ project.name }} - {% endblock %}
 
 {% block body %}

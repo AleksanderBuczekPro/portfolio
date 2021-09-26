@@ -43,6 +43,48 @@
                                     <a href="{{ asset('assets/uploads/' ~ project.frontImage) }}" target="_blank">
                                         <img src="{{ asset('assets/uploads/' ~ project.frontImage) }}" class="project-visual" alt="Image">
                                     </a>
+                                    {% set size = project.frontImage.imageSize %}
+                                        {% set alert = "secondary" %}
+
+                                        {% if size >= 1073741824 %}
+
+                                            {% set size = size / 1073741824 %}
+                                            {% set size = size|number_format(2, '.', ',')  ~ 'GB' %}
+
+                                            {% set alert = "danger" %}
+
+                                        {% elseif size >= 1048576 %}
+
+                                            {% set size = size / 1048576 %}
+                                            {% set size = size|number_format(2, '.', ',')  ~ 'MB' %}
+
+                                            {% set alert = "danger" %}
+
+                                        {% elseif size >= 1024 %}
+
+                                            {% set size = size / 1024 %}
+                                            {% set size = size|number_format(2, '.', ',')  ~ 'KB' %}
+
+                                        {% elseif size > 1 %}
+
+                                            {% set size = size ~ 'bytes' %}
+
+                                        {% elseif size == 1 %}
+
+                                            {% set size = size ~ 'byte' %}
+                                        
+                                        {% else %}
+
+                                            {% set size = '0 byte' %}
+
+                                        {% endif %}
+
+
+
+
+                                            <p class="text-{{alert}}">{{ size }}</p>
+
+
                                 </td>
                                 <td><div class="project-color m-auto" style="background-color: {{ project.color }};"></div></td>
                                 <td class="bold">
