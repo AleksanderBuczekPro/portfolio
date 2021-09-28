@@ -100,6 +100,19 @@
     color: #01123C;
 }
 
+.btn-white{
+
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.btn-white:hover{
+
+    color: var(--marine-color);
+    background-color: white;
+}
+
 
 button.accordion-button:focus{
 
